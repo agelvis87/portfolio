@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.background-container {
+  background: #000428;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, rgba(0, 78, 146, 0.600), rgba(0, 4, 40, 0.600));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgba(0, 78, 146, 0.600), rgba(0, 4, 40, 0.600));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
