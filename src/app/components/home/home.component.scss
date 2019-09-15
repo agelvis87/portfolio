@@ -13,13 +13,14 @@
 .text-container {
   color: map-get($colors, first);
   width: 30%;
-  font-family: $lettle_type;
+  font-family: $font_type;
 }
 
 .title {
-  font-size: map-get($lettle_size, title);
-  font-family: $lettle_type;
+  font-size: map-get($font_size, title);
+  font-family: $font_type;
   border-bottom: map-get($colors, second) solid 3px;
+  text-shadow: 4px 4px 4px map-get($colors, third);
 }
 
 .section-button {
@@ -30,8 +31,9 @@
 }
 
 .sub-title {
-  font-size: map-get($lettle_size, sub-title);
+  font-size: map-get($font_size, sub-title);
   margin-top: -10%;
+  text-shadow: 4px 4px 4px map-get($colors, third);
 }
 
 .button-2 {
@@ -47,9 +49,10 @@
 }
 
 .button-2 a {
-  font-family: $lettle_type;
-  font-size: map-get($lettle_size, button);
+  font-family: $font_type;
+  font-size: map-get($font_size, button);
   color: map-get($colors, first);
+  text-shadow: 4px 4px 4px map-get($colors, third);
   text-decoration: none;
   line-height: 50px;
   transition: all 0.5s ease;
@@ -73,4 +76,5 @@
 
 .button-2:hover a {
   color: map-get($colors, third);
+  text-shadow: none;
 }
