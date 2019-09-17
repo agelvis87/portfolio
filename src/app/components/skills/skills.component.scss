@@ -1,7 +1,11 @@
 @import "./../../app.component.scss";
 
 body {
- height: 50%;
+  height: 50%;
+}
+
+.bg-white {
+  background-color: map-get($colors, first);
 }
 
 .skill-content {
@@ -9,33 +13,35 @@ body {
   justify-content: center;
 }
 
-.front-end {
+.section {
   display: flex;
   justify-content: space-around;
 }
 
-.front-end-shape {
+.shape {
   width: 40%;
 }
 
-.front-end-text {
+.description {
   width: 50%;
-  padding-right: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
   padding-top: 10vh;
   font-size: map-get($font-size, description);
-  text-shadow: 4px 4px 4px map-get($colors, third);
-  color: map-get($colors, first);
   line-height: 1.8;
   text-align: justify;
   text-indent: 50px;
 }
 
-/// Mixin to put items on a circle
-/// [1] - Allows children to be absolutely positioned
-/// [2] - Allows the mixin to be used on a list
-/// [3] - In case box-sizing: border-box has been enabled
-/// [4] - Allows any type of direct children to be targeted
-///
+.description-front {
+  text-shadow: 4px 4px 4px map-get($colors, third);
+  color: map-get($colors, first);
+}
+
+.description-back {
+  color: map-get($colors, third);
+}
+
 /// @param {Integer} $nb-items - Number or items
 /// @param {Length} $circle-size - Container size
 /// @param {Length} $item-size - Item size
@@ -76,47 +82,68 @@ body {
   }
 }
 
-/* @keyframes rot {
-	from {
-		transform: rotate(0deg)
-		           translate(-150px)
-		           rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg)
-		           translate(-150px) 
-		           rotate(-360deg);
-	}
-} */
-
-.circle-container {
+.circle-container-front {
   @include distribute-on-circle(8, 20em, 6em);
   margin: 5em auto 0;
-  border: solid 3px map-get($colors, second);
+  border: solid 5px map-get($colors, second);
 }
 
-.circle-container img {
+.circle-container-back {
+  @include distribute-on-circle(5, 20em, 6em);
+  margin: 5em auto 0;
+  border: solid 5px #ff5733;
+}
+
+.circle-container-database {
+  @include distribute-on-circle(6, 20em, 6em);
+  margin: 5em auto 0;
+  border: solid 5px map-get($colors, second);
+}
+
+.circle-container-front img,
+.circle-container-back img,
+.circle-container-database img {
   display: block;
   width: 100%;
   border-radius: 50%;
   z-index: 2;
   filter: grayscale(100%);
-  animation: rot 3s infinite linear;
-
-  &:hover {
-    filter: grayscale(0) drop-shadow(0 0 0.75rem map-get($colors, second));
-    cursor: pointer;
-  }
 }
 
-.title {
+.circle-container-front img:hover,
+.circle-container-database img:hover {
+  filter: grayscale(0) drop-shadow(0 0 0.75rem map-get($colors, second));
+  cursor: pointer;
+}
+
+.circle-container-back img:hover {
+  filter: grayscale(0) drop-shadow(0 0 0.75rem #ff5733);
+  cursor: pointer;
+}
+
+.title-front,
+.title-back {
   display: flex;
   justify-content: center;
   font-size: map-get($font-size, title);
-  color: map-get($colors, first);
-  text-shadow: 4px 4px 4px map-get($colors, third);
   position: relative;
   top: -190px;
   left: 30%;
   width: 40%;
+}
+
+.title-front {
+  color: map-get($colors, first);
+  text-shadow: 4px 4px 4px map-get($colors, third);
+}
+
+.title-back {
+  color: map-get($colors, third);
+}
+
+.skew-section {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  bottom: -19px;
 }
